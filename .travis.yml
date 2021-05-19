@@ -10,4 +10,4 @@ install:
 
 script:   
   - cd picture-crusade   
-  - ./st.sh 
+  - bash st.sh 
