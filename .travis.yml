@@ -8,5 +8,5 @@ install:
   - pip3 install pillow
 
 script:   
-  - cd my_lab_3   
+  - cd picture-crusade   
   - ./st.sh 
