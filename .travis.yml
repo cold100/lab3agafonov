@@ -6,6 +6,7 @@ install:
   - pip3 install flask_wtf
   - pip3 install numpy
   - pip3 install pillow
+  - pip3 install matplotlib
 
 script:   
   - cd picture-crusade   
