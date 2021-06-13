@@ -64,14 +64,6 @@ def uploaded_file(filename,option):
     plt.close()
     return render_template('image.html', img = path, option=option, new_img=new_path, graph = graph_path)
 
-try:
-    r = requests.get('http://localhost:5000/')
-    print(r.status_code)
-    if(r.status_code!=200):
-        exit(1)
-    print(r.text)
-except:
-    exit(1)
 
 if __name__ == '__main__':
     app.run(debug=True)
