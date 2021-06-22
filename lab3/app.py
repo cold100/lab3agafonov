@@ -77,5 +77,15 @@ def upload_file():
             return redirect(url_for('uploaded_file', filename=filename, types=select, r=r, g=g,b=b))
     return render_template('index.html', types = types, form = form)
 
+import lxml.etree as ET
+@app.route("/apixml",methods=['GET', 'POST'])
+def apixml():
+    dom = ET.parse("./static/xml/file.xml")
+    xslt = ET.parse("./static/xml/file.xslt")
+    transform = ET.XSLT(xslt)
+    newhtml = transform(dom)
+    strfile = ET.tostring(newhtml)
+    return strfile
+
 if __name__ == '__main__':
     app.run(debug=True)
