@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>{{old_image}}</title>
+</head>
+<body>
+{%block img%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <p align="center">Ваша картинка</p>
+        </div>
+        <div class="col-lg-6">
+            <p align="center">Измененная картинка
+        </p></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6"><img class="img-fluid" src="../images/{{old_image}}"></div>
+        <div class="col-lg-6"><img class="img-fluid" src="../images/new{{old_image}}"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6"><img class="img-fluid" src="{{ old_plot}}"></div>
+        <div class="col-lg-6"><img class="img-fluid" src="{{ new_plot}}"></div>
+    </div>
+    <div class="row">
+     <a class="btn btn-light" role="button" href="/">Вернуться на главную</a>
+    </div>
+</div>
+{%endblock%}
+</body>
