@@ -7,26 +7,22 @@
 <body>
     <div>
         <h3 align="center">Лабораторная работа №3</h3>
-        <p>     Веб-приложение должно рисовать на картинке вертикальный или
-            горизонтальный крест заданного цвета в зависимости от желания пользователя,
-            выдавать графики распределения цветов исходной картинки и новой картинки.</p>
+        <p>     Веб-приложение должно рисовать крест, центр и размер которого задается пользователем.</p>
     </div>
     <h4>Выберите картинку:</h4>
     <form action="" method=post enctype=multipart/form-data>
         {{ form.csrf_token }}
         <div class="mb-3">
             <p><input class="form-control" type=file  name=file id="file"></p>
-            <h4>Выберите цвет RGB:</h4>
+            <h4>Выберите цвет креста:</h4>
             <input type="range" min="0" max="255" name="r" />
             <input type="range" min="0" max="255" name="g" />
             <input type="range" min="0" max="255" name="b" />
-            <h4>Выберите тип креста:</h4>
-            <select id="cl" class="select" name="types" method="GET" action="/">
-                <option value="{{types[0]}}" selected>{{types[0]}}</option>
-                    {% for type in types[1:] %}
-                <option value="{{type}}">{{type}}</option>
-                    {% endfor %}
-            </select>
+            <h4>Выберите координаты точки центра креста X и Y соответственно:</h4>
+            <input name = "H" type="text">
+            <input name = "W" type="text">
+            <h4>Выберите ширину креста:</h4>
+            <input name = "size" type="text">
             <hr>
             {{form.recaptcha()}}
             <br>
